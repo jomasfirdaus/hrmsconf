@@ -40,7 +40,7 @@ import logging
 from django.core.exceptions import ObjectDoesNotExist
 
 
-from twilio.rest import Client
+# from twilio.rest import Client
 
 def hrmsconf(request):
 
@@ -48,19 +48,19 @@ def hrmsconf(request):
 
 
 
-    account_sid = 'AC5b66b01f15d57ca88b1eddb02ca3d622'
-    auth_token = 'ed8ba42ac0d468895accd11f957ab805'
-    client = Client(account_sid, auth_token)
+    # account_sid = 'AC5b66b01f15d57ca88b1eddb02ca3d622'
+    # auth_token = 'ed8ba42ac0d468895accd11f957ab805'
+    # client = Client(account_sid, auth_token)
 
-    message = client.messages.create(
-    from_='whatsapp:+14155238886',
-    body='Your Twilio code is 1238432',
-    to='whatsapp:+6282339519417'
-    )
+    # message = client.messages.create(
+    # from_='whatsapp:+14155238886',
+    # body='Your Twilio code is 1238432',
+    # to='whatsapp:+6282339519417'
+    # )
 
 
     
-    print(message.sid)
+    # print(message.sid)
 
     # dadospr = RequestOrder.objects.all().order_by('-id')
     context = {
