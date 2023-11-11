@@ -1,0 +1,168 @@
+{% extends 'utilizador/layout.html' %}
+{% block content %}
+{% load fegt9_mpg_proteksaun_url %}
+
+		<!-- ============================================================== -->
+						<!-- pageheader  -->
+						<!-- ============================================================== -->
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<div class="page-header">
+									<h2 class="pageheader-title">Konfigurasaun HRMS </h2>
+									<p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+									<div class="page-breadcrumb">
+										<nav aria-label="breadcrumb">
+											<ol class="breadcrumb">
+												<li class="breadcrumb-item"><a href="#" class="breadcrumb-link">CVTL</a></li>
+												<li class="breadcrumb-item active" aria-current="page">Hris Painel</li>
+											</ol>
+
+                                            
+										</nav>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- ============================================================== -->
+						<!-- end pageheader  -->
+						<!-- ============================================================== -->
+						<div class="ecommerce-widget">
+	
+				
+							<div class="row">
+								<!-- ============================================================== -->
+						  
+								<!-- ============================================================== -->
+	
+											  <!-- recent orders  -->
+								<!-- ============================================================== -->
+								<div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
+									<div class="card">
+										<h5 class="card-header">Purchase Request  <a href="{% url 'hrmsconf:generatelevelandgroup'%}" class="btn btn-primary btn-sm float-right ">  <i class="far fa-paper-plane"></i> Generate level & group </a></h5>      
+                                        
+                                     
+										<div class="card-body p-0">
+											<div class="table-responsive">
+
+
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-5">
+                            <div class="section-block">
+                                <h5 class="section-title">{{tab}}</h5>
+                                <p>Takes the basic nav from above and adds the .nav-tabs class to generate a tabbed interface..</p>
+                            </div>
+                            <div class="tab-vertical">
+                                <ul class="nav nav-tabs" id="myTab3" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link {{tab_purchace_request}}"  href="{% url 'hrmsconf:hrmsconftab' 'purchace_request' %}" role="tab" aria-controls="home" aria-selected="true">Conf Purchace Aprova</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{tab_leave}}"  href="{% url 'hrmsconf:hrmsconftab' 'leave' %}" role="tab" aria-controls="profile" aria-selected="false">Conf Leave Aprovr</a>
+                                    </li>
+									                                    <li class="nav-item">
+                                        <a class="nav-link"  href="" role="tab" aria-controls="profile" aria-selected="false">Conf Medical Aprove</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="" role="tab" aria-controls="contact" aria-selected="false">Conf Trip aprove</a>
+                                    </li>
+
+								  <li class="nav-item">
+                                        <a class="nav-link" href="" role="tab" aria-controls="contact" aria-selected="false">Email XMTP</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent3">
+                                    <div class="tab-pane fade show active" id="home-vertical" role="tabpanel" aria-labelledby="home-vertical-tab">
+                                       <h5 class="section-title">Konfigura - {{tab}}</h5>
+
+									   {% if tab %}
+									   
+							    	<table class="table table-sm">
+
+													<thead class="bg-light">
+														<tr class="border-0">
+															<th class="border-0">Nu</th>
+															<th class="border-0">level</th>
+								
+															<th class="border-0">#</th>
+													
+														</tr>
+													</thead>
+													<tbody>
+
+
+														<tr>
+														<td>1</td>
+															<td>jeral</td>
+															<td>
+
+
+                                                                
+
+                                                             <!-- <a href="{% url 'rekrutamentu:publikavaga' dados.id|encrypt_id_tag %}" class="btn btn-primary btn-sm" >  <i class=" fas fa-volume-up"></i> Publika vaga</a> -->
+                                                             <a href="{% url 'hrmsconf:hrmsconfrequestset' tab 'jeral'%}" class="btn btn-primary btn-sm" >  <i class="fas fa-edit"></i> </a>
+
+                                                        
+                                                             
+
+                                                            </td>
+															<tr>
+															<td colspan='2'>
+														<center><b>Seluk</b></center>
+															</td>
+
+															<tr>
+														</tr>
+
+
+
+                                                        {% for dados in dadospr %}
+														<tr>
+														
+															<td>{{forloop.counter}}</td>
+															<td>{{forloop.counter}}</td>
+													
+															<td>
+
+
+                                                                
+
+                                                             <!-- <a href="{% url 'rekrutamentu:publikavaga' dados.id|encrypt_id_tag %}" class="btn btn-primary btn-sm" >  <i class=" fas fa-volume-up"></i> Publika vaga</a> -->
+                                                             <a href="{% url 'purchase_request:editrequestpurchase' dados.id|encrypt_id_tag %}" class="btn btn-primary btn-sm" >  <i class="fas fa-edit"></i> </a>
+
+                                                             
+
+                                                            </td>
+														</tr>
+                                                        {% endfor %}
+													
+													</tbody>
+												</table>
+                                    
+									
+								{% endif %}	</div>
+                               
+                                </div>
+                            </div>
+                        </div>
+											
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- ============================================================== -->
+								<!-- end recent orders  -->
+	
+		
+								<!-- ============================================================== -->
+								<!-- ============================================================== -->
+								<!-- customer acquistion  -->
+								<!-- ============================================================== -->
+							
+								<!-- ============================================================== -->
+								<!-- end customer acquistion  -->
+								<!-- ============================================================== -->
+							</div>
+				
+						
+						</div>
+
+{% endblock content %}
